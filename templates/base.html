@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Page title & description -->
+  <title>{% block title %}KhetIQ - Smart Farming{% endblock %}</title>
+  <meta name="description" content="{% block description %}KhetIQ empowers farmers with AI tools for better, sustainable agriculture.{% endblock %}">
+
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="author" content="KhetIQ Team">
+  <meta name="keywords" content="KhetIQ, Smart Farming, AI Agriculture, Precision Agriculture, Crop Monitoring, AgriTech">
+
+  <!-- =========================
+       🔹 GOOGLE TAG MANAGER (HEAD)
+       ========================= -->
+  <!-- GTM_HEAD_PLACEHOLDER -->
+  <!-- Replace GTM-XXXXXXX after creating container -->
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon-96x96.png') }}" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+  <meta name="apple-mobile-web-app-title" content="KHETIQ">
+  <link rel="manifest" href="{{ url_for('static', filename='images/site.webmanifest') }}">
+
+  <!-- Theme Colors -->
+  <meta name="theme-color" content="#2e7d32">
+  <meta name="msapplication-TileColor" content="#2e7d32">
+
+  <!-- =========================
+       🔹 GLOBAL DATA LAYER
+       ========================= -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      site_name: "KhetIQ",
+      environment: "development",
+      page_template: "{{ request.endpoint }}"
+    });
+  </script>
+</head>
+
+<body data-site="khetiq">
+
+  <!-- =========================
+       🔹 GOOGLE TAG MANAGER (BODY)
+       ========================= -->
+  <!-- GTM_BODY_PLACEHOLDER -->
+
+  {% include 'header.html' %}
+
+  <main id="main_content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer data-section="footer">
+    <p>&copy; 2025 KhetIQ. All rights reserved.</p>
+  </footer>
+
+  <!-- =========================
+       🔹 UI + VIDEO SCRIPT (UNCHANGED LOGIC)
+       ========================= -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+      /* Header scroll behavior */
+      const header = document.querySelector(".main-header");
+      window.addEventListener("scroll", function() {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      /* Lazy-load hero video */
+      const video = document.querySelector(".hero video");
+      if (video) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              video.play().catch(err => {
+                console.warn("Autoplay prevented:", err);
+              });
+              observer.unobserve(video);
+            }
+          });
+        }, { threshold: 0.3 });
+        observer.observe(video);
+      }
+
+    });
+  </script>
+
+</body>
+</html>

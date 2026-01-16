@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - KhetIQ{% endblock %}
+{% block description %}Learn more about KhetIQ, a pioneer in AI-driven farming solutions designed to transform agriculture.{% endblock %}
+
+{% block content %}
+<section class="contact"
+         id="contact_section"
+         data-page-type="lead"
+         data-section="contact">
+
+  <h1 data-content-type="page_heading">Contact Us</h1>
+
+  <form method="post"
+        id="contact_form"
+        data-event="form_start"
+        data-form-name="contact_us"
+        data-form-type="lead">
+
+    <input type="text"
+           name="name"
+           placeholder="Your Name"
+           required
+           data-field-name="name">
+
+    <input type="email"
+           name="email"
+           placeholder="Your Email"
+           required
+           data-field-name="email">
+
+    <textarea name="message"
+              placeholder="Your Message"
+              required
+              data-field-name="message"></textarea>
+
+    <button type="submit"
+            id="contact_submit_btn"
+            data-event="form_submit"
+            data-form-name="contact_us">
+      Send Message
+    </button>
+  </form>
+
+  <!-- Flash messages -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flash-messages"
+          id="form_success_message"
+          data-event="form_success"
+          data-form-name="contact_us">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+</section>
+{% endblock %}

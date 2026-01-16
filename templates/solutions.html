@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Solutions - KhetIQ{% endblock %}
+
+{% block content %}
+<section class="content"
+         id="solutions_section"
+         data-page-type="solutions"
+         data-section="solutions">
+
+  <h1 data-content-type="page_heading">Our Solutions</h1>
+
+  <ul class="solutions-list">
+
+    <li data-event="solution_click"
+        data-solution-name="precision_agriculture"
+        data-solution-category="ai_tools">
+        Precision Agriculture Tools
+    </li>
+
+    <li data-event="solution_click"
+        data-solution-name="ai_crop_monitoring"
+        data-solution-category="computer_vision">
+        AI Crop Monitoring
+    </li>
+
+    <li data-event="solution_click"
+        data-solution-name="data_analytics_forecasting"
+        data-solution-category="analytics">
+        Data Analytics & Forecasting
+    </li>
+
+    <li data-event="solution_click"
+        data-solution-name="custom_ml_solutions"
+        data-solution-category="machine_learning">
+        Custom Machine Learning Solutions
+    </li>
+
+  </ul>
+
+  <!-- CTA after solution view -->
+  <a href="/contact"
+     class="cta-button"
+     id="solutions_cta_contact"
+     data-event="cta_click"
+     data-cta-name="contact_after_solutions"
+     data-cta-location="solutions_page">
+     Talk to Us
+  </a>
+
+</section>
+{% endblock %}

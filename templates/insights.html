@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Insights - KhetIQ{% endblock %}
+
+{% block content %}
+<section class="content"
+         id="insights_section"
+         data-page-type="insights"
+         data-section="insights">
+
+  <h1 data-content-type="page_heading">Insights</h1>
+
+  <p data-content-type="page_description">
+    Stay updated with the latest trends in smart agriculture.
+  </p>
+
+  <!-- Example insight blocks (scalable later) -->
+  <div class="insight-item"
+       data-event="insight_view"
+       data-insight-topic="smart_farming_trends">
+    <h3>Smart Farming Trends</h3>
+    <p>How AI is transforming modern agriculture.</p>
+  </div>
+
+  <div class="insight-item"
+       data-event="insight_view"
+       data-insight-topic="ai_in_agriculture">
+    <h3>AI in Agriculture</h3>
+    <p>Use cases of machine learning and computer vision in farming.</p>
+  </div>
+
+  <!-- CTA -->
+  <a href="/contact"
+     class="cta-button"
+     id="insights_cta_contact"
+     data-event="cta_click"
+     data-cta-name="contact_from_insights"
+     data-cta-location="insights_page">
+     Talk to Our Team
+  </a>
+
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero"
+         id="hero_section"
+         data-section="hero"
+         data-page-type="home">
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline
+         id="hero_video"
+         data-event="video_impression"
+         data-video-name="hero_background"
+         data-video-context="home">
+    <source src="{{ url_for('static', filename='videos/hero-background.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay Layer -->
+  <div class="hero-overlay"></div>
+
+  <!-- Text Content -->
+  <div class="hero-text"
+       data-section="hero_content">
+
+    <h1 id="hero_heading"
+        data-content-type="headline">
+        Welcome to KhetIQ
+    </h1>
+
+    <p id="hero_subtitle"
+       data-content-type="tagline">
+       Smart Farming Solutions Powered by AI.
+    </p>
+
+    <!-- Optional CTA (ready even if hidden later) -->
+    <a href="/solutions"
+       class="cta-button"
+       id="hero_cta_explore"
+       data-event="cta_click"
+       data-cta-name="explore_solutions"
+       data-cta-location="hero">
+       Explore Solutions
+    </a>
+
+  </div>
+</section>
+{% endblock %}

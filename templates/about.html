@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - KhetIQ{% endblock %}
+
+{% block content %}
+<section class="content"
+         id="about_section"
+         data-page-type="about"
+         data-section="about">
+
+  <h1 data-content-type="page_heading">About Us</h1>
+
+  <p data-content-type="page_description">
+    KhetIQ is committed to revolutionizing agriculture with AI solutions.
+  </p>
+
+  <!-- Optional engagement CTA -->
+  <a href="/solutions"
+     class="cta-button"
+     id="about_cta_solutions"
+     data-event="cta_click"
+     data-cta-name="explore_solutions_from_about"
+     data-cta-location="about_page">
+     Explore Our Solutions
+  </a>
+
+</section>
+{% endblock %}

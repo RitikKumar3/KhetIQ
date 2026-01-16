@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Services - KhetIQ{% endblock %}
+
+{% block content %}
+<section class="content"
+         id="services_section"
+         data-page-type="services"
+         data-section="services">
+
+  <h1 data-content-type="page_heading">Services</h1>
+
+  <p data-content-type="page_description">
+    Explore our AI-powered services tailored to agriculture.
+  </p>
+
+  <ul class="services-list">
+
+    <li data-event="service_interest"
+        data-service-name="consulting"
+        data-service-category="advisory">
+        AI Consulting for Agriculture
+    </li>
+
+    <li data-event="service_interest"
+        data-service-name="model_development"
+        data-service-category="ml">
+        Custom Model Development
+    </li>
+
+    <li data-event="service_interest"
+        data-service-name="deployment"
+        data-service-category="mlops">
+        Model Deployment & Monitoring
+    </li>
+
+    <li data-event="service_interest"
+        data-service-name="analytics"
+        data-service-category="data">
+        Analytics & Insights
+    </li>
+
+  </ul>
+
+  <!-- CTA -->
+  <a href="/solutions"
+     class="cta-button"
+     id="services_cta_solutions"
+     data-event="cta_click"
+     data-cta-name="explore_solutions_from_services"
+     data-cta-location="services_page">
+     Explore Solutions
+  </a>
+
+</section>
+{% endblock %}
